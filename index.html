@@ -588,6 +588,128 @@
       font-weight: 600;
     }
 
+    /* Terminal Mockup */
+    .terminal-mockup {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
+    }
+
+    .terminal-header {
+      background: #2d2d2d;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .terminal-dot.red { background: #FF5F57; }
+    .terminal-dot.yellow { background: #FFBD2E; }
+    .terminal-dot.green { background: #28CA41; }
+
+    .terminal-title {
+      font-size: 13px;
+      color: var(--gray);
+      font-family: 'SF Mono', 'Menlo', monospace;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .terminal-line {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .terminal-blank {
+      height: 20px;
+    }
+
+    .terminal-prompt {
+      color: var(--green);
+    }
+
+    .terminal-command {
+      color: var(--white);
+    }
+
+    .terminal-output {
+      color: var(--gray);
+    }
+
+    .terminal-user {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    .terminal-input {
+      color: var(--white);
+    }
+
+    .terminal-claude {
+      color: var(--purple);
+      font-weight: 600;
+    }
+
+    .terminal-response {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .terminal-action {
+      color: var(--blue);
+      padding-left: 60px;
+    }
+
+    .terminal-success {
+      color: var(--green);
+      padding-left: 60px;
+    }
+
+    /* Market Share Visual */
+    .market-shift {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .market-old {
+      font-size: clamp(56px, 10vw, 100px);
+      font-weight: 800;
+      color: var(--red);
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .market-arrow {
+      font-size: 48px;
+      color: var(--gray);
+    }
+
+    .market-new {
+      font-size: clamp(56px, 10vw, 100px);
+      font-weight: 800;
+      color: var(--red);
+    }
+
     /* Framework Grid */
     .framework-grid {
       display: flex;
@@ -654,8 +776,16 @@
     }
 
     .why-claude-icon {
-      font-size: 32px;
+      color: var(--pink);
       margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .why-claude-icon svg {
+      width: 32px;
+      height: 32px;
     }
 
     .why-claude-title {
@@ -973,6 +1103,38 @@
 
   <section class="bg-black">
     <div class="stack">
+      <span class="text-medium white animate-in">I needed something different.</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">ChatGPT market share:</span>
+      <div class="market-shift animate-in delay-1">
+        <span class="market-old">69%</span>
+        <span class="market-arrow">→</span>
+        <span class="market-new">45%</span>
+      </div>
+      <span class="text-small animate-in delay-2">Jan 2025 to today</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Claude Code:</span>
+      <span class="text-large green animate-in delay-1">$1B+ revenue</span>
+      <span class="text-small animate-in delay-2">in just 6 months</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Something was shifting.</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
       <span class="text-medium white animate-in">So I turned to</span>
       <span class="text-huge pink animate-in delay-1">Claude Code.</span>
     </div>
@@ -1003,22 +1165,41 @@
   <section class="bg-black">
     <div class="why-claude-grid animate-in">
       <div class="why-claude-card">
-        <div class="why-claude-icon">📁</div>
+        <div class="why-claude-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
         <div class="why-claude-title">File Access</div>
         <div class="why-claude-desc">Reads your files, images, PDFs, CSVs. Writes directly to your computer.</div>
       </div>
       <div class="why-claude-card">
-        <div class="why-claude-icon">🧠</div>
+        <div class="why-claude-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+        </div>
         <div class="why-claude-title">Full Context</div>
         <div class="why-claude-desc">Holds your entire project in memory. No more copy-pasting piece by piece.</div>
       </div>
       <div class="why-claude-card">
-        <div class="why-claude-icon">⚡</div>
+        <div class="why-claude-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </div>
         <div class="why-claude-title">Executes Commands</div>
         <div class="why-claude-desc">Runs code, deploys websites, publishes to GitHub. Real actions, not suggestions.</div>
       </div>
       <div class="why-claude-card">
-        <div class="why-claude-icon">🎯</div>
+        <div class="why-claude-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
         <div class="why-claude-title">Non-Developer Friendly</div>
         <div class="why-claude-desc">I'm a marketer. I use this every day. No coding required.</div>
       </div>
@@ -1028,6 +1209,50 @@
   <section class="bg-black">
     <div class="stack">
       <span class="text-large white animate-in">This is how we did it.</span>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="terminal-mockup animate-scale">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+        </div>
+        <span class="terminal-title">claude — ~/marketing-campaign</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line">
+          <span class="terminal-prompt">$</span>
+          <span class="terminal-command">claude</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-output">Claude Code v1.0.0</span>
+        </div>
+        <div class="terminal-line terminal-blank"></div>
+        <div class="terminal-line">
+          <span class="terminal-user">You:</span>
+          <span class="terminal-input">Build me a landing page for this campaign. Use the brand guidelines in /assets and pull testimonials from our database.</span>
+        </div>
+        <div class="terminal-line terminal-blank"></div>
+        <div class="terminal-line">
+          <span class="terminal-claude">Claude:</span>
+          <span class="terminal-response">I'll create the landing page. Let me read your brand guidelines and testimonials first...</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-action">Reading /assets/brand-guidelines.pdf...</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-action">Fetching testimonials from database...</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-action">Creating index.html...</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-success">Done. Landing page created at ./campaign/index.html</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1061,6 +1286,16 @@
     <img src="Websites.png" class="product-image animate-scale" alt="Page Builder">
   </section>
 
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Result:</span>
+      <div class="stat-highlight animate-in delay-1">
+        <div class="stat-value">60%</div>
+        <div class="stat-label">Better conversion than previous pages</div>
+      </div>
+    </div>
+  </section>
+
   <!-- TOOL 2: TESTING AGENT -->
   <section class="bg-black">
     <div class="stack">
@@ -1090,43 +1325,10 @@
     <img src="testing.png" class="product-image animate-scale" alt="Testing Agent">
   </section>
 
-  <!-- TOOL 3: CEO CLONE -->
+  <!-- TOOL 3: AD GENERATOR -->
   <section class="bg-black">
     <div class="stack">
-      <span class="eyebrow purple animate-in">Tool 03</span>
-      <span class="text-huge white animate-in delay-1">CEO Clone</span>
-    </div>
-  </section>
-
-  <section class="bg-black">
-    <div class="stack">
-      <span class="text-medium white animate-in">My CEO, Vishen, was on holiday.</span>
-      <span class="text-medium white animate-in delay-1">But everyone needed approvals.</span>
-    </div>
-  </section>
-
-  <section class="bg-black">
-    <div class="stack">
-      <span class="text-medium white animate-in">So I cloned him.</span>
-      <span class="text-large pink animate-in delay-1">Her name is Eliza.</span>
-    </div>
-  </section>
-
-  <section class="bg-dark">
-    <img src="Vishen-clone.png" class="product-image animate-scale" alt="Eliza - CEO Clone">
-  </section>
-
-  <section class="bg-black">
-    <div class="stack">
-      <span class="text-medium white animate-in">Accelerated decision-making.</span>
-      <span class="text-medium pink animate-in delay-1">No more waiting for approvals.</span>
-    </div>
-  </section>
-
-  <!-- TOOL 4: AD GENERATOR -->
-  <section class="bg-black">
-    <div class="stack">
-      <span class="eyebrow animate-in">Tool 04</span>
+      <span class="eyebrow animate-in">Tool 03</span>
       <span class="text-huge white animate-in delay-1">Ad Generator</span>
     </div>
   </section>
@@ -1147,10 +1349,10 @@
     <img src="ad-generator.jpg" class="product-image animate-scale" alt="Ad Generator">
   </section>
 
-  <!-- TOOL 5: CLIP FINDER -->
+  <!-- TOOL 4: CLIP FINDER -->
   <section class="bg-black">
     <div class="stack">
-      <span class="eyebrow animate-in">Tool 05</span>
+      <span class="eyebrow animate-in">Tool 04</span>
       <span class="text-huge white animate-in delay-1">Clip Finder</span>
     </div>
   </section>
@@ -1167,6 +1369,41 @@
     <img src="clip-finder.jpg" class="product-image-small animate-scale" alt="Clip Finder">
   </section>
 
+  <!-- TOOL 5: SCRIPT GENERATOR -->
+  <section class="bg-black">
+    <div class="stack">
+      <span class="eyebrow orange animate-in">Tool 05</span>
+      <span class="text-huge white animate-in delay-1">Script Generator</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Pick any product.</span>
+      <span class="text-medium white animate-in delay-1">It pulls everything automatically.</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Product info. Customer testimonials.</span>
+      <span class="text-medium white animate-in delay-1">Best-performing ad psychology.</span>
+      <span class="text-medium pink animate-in delay-2">All in 10 seconds.</span>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <img src="script-generator.png" class="product-image animate-scale" alt="Script Generator">
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Can't film? No problem.</span>
+      <span class="text-medium white animate-in delay-1">Use HeyGen. Create banner ads.</span>
+      <span class="text-medium pink animate-in delay-2">High-performing creative in minutes.</span>
+    </div>
+  </section>
+
   <!-- TOOL 6: SALES ANALYZER -->
   <section class="bg-black">
     <div class="stack">
@@ -1178,71 +1415,13 @@
   <section class="bg-black">
     <div class="stack">
       <span class="text-medium white animate-in">Watches every sales call.</span>
-      <span class="text-medium pink animate-in delay-1">Shows exactly where you're losing people.</span>
+      <span class="text-medium white animate-in delay-1">Identifies exactly where we lose people.</span>
+      <span class="text-medium pink animate-in delay-2">Tells me how to fix the sales flow.</span>
     </div>
   </section>
 
   <section class="bg-dark">
     <img src="pitch-analyzer.png" class="product-image-small animate-scale" alt="Sales Analyzer">
-  </section>
-
-  <!-- TOOL 7: HOOK ANALYZER -->
-  <section class="bg-black">
-    <div class="stack">
-      <span class="eyebrow orange animate-in">Tool 07</span>
-      <span class="text-huge white animate-in delay-1">Hook Analyzer</span>
-    </div>
-  </section>
-
-  <section class="bg-black">
-    <div class="stack">
-      <span class="text-medium white animate-in">Paste any competitor's ad.</span>
-      <span class="text-medium white animate-in delay-1">AI breaks down why it works.</span>
-      <span class="text-medium pink animate-in delay-2">Then rewrites it in your voice.</span>
-    </div>
-  </section>
-
-  <section class="bg-black">
-    <div class="hook-mockup animate-in">
-      <div class="hook-header">
-        <span class="hook-title">Hook Analyzer</span>
-        <span class="hook-badge">ANALYSIS COMPLETE</span>
-      </div>
-      <div class="hook-input">
-        <div class="hook-input-label">Competitor Ad</div>
-        <div class="hook-input-text">"I went from $0 to $10K/month in 90 days. Here's the exact blueprint..."</div>
-      </div>
-      <div class="hook-analysis">
-        <div class="hook-result">
-          <div class="hook-result-label">Hook Type</div>
-          <div class="hook-result-value">Transformation + Curiosity Gap</div>
-        </div>
-        <div class="hook-result">
-          <div class="hook-result-label">Emotional Trigger</div>
-          <div class="hook-result-value">Desire for financial freedom</div>
-        </div>
-        <div class="hook-result">
-          <div class="hook-result-label">Power Words</div>
-          <div class="hook-result-value">"exact", "blueprint", specific numbers</div>
-        </div>
-        <div class="hook-result">
-          <div class="hook-result-label">Why It Works</div>
-          <div class="hook-result-value">Specificity builds trust. Timeframe creates urgency.</div>
-        </div>
-      </div>
-      <div class="hook-output">
-        <div class="hook-output-label">Rewritten for Your Brand</div>
-        <div class="hook-output-text">"I went from overwhelmed entrepreneur to running a 7-figure business on 4 hours a day. Here's the Mindvalley method..."</div>
-      </div>
-      <div class="hook-buttons">
-        <button class="hook-btn">Generate 5 More Variations</button>
-        <button class="hook-btn hook-btn-secondary">Rewrite in Different Tone</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-black">
-    <span class="text-large orange animate-in">Reverse engineer. Rewrite. Launch.</span>
   </section>
 
   <!-- ==========================================
@@ -1405,6 +1584,41 @@
 
   <section class="bg-dark">
     <img src="support-bot.png" class="product-image animate-scale" alt="Support Bot">
+  </section>
+
+  <!-- CEO CLONE -->
+  <section class="bg-black">
+    <div class="stack">
+      <span class="eyebrow purple animate-in">Automating Decisions</span>
+      <span class="text-huge white animate-in delay-1">CEO Clone</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Decisions bottleneck at the top.</span>
+      <span class="text-medium white animate-in delay-1">One CEO. Thousands of requests.</span>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">So we trained an AI on Vishen's</span>
+      <span class="text-medium white animate-in delay-1">decision-making patterns.</span>
+      <span class="text-large pink animate-in delay-2">Her name is Eliza.</span>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <img src="Vishen-clone.png" class="product-image animate-scale" alt="Eliza - CEO Clone">
+  </section>
+
+  <section class="bg-black">
+    <div class="stack">
+      <span class="text-medium white animate-in">Instant feedback on creative.</span>
+      <span class="text-medium white animate-in delay-1">Consistent brand voice checks.</span>
+      <span class="text-medium pink animate-in delay-2">No more waiting weeks for approvals.</span>
+    </div>
   </section>
 
   <!-- OKR SYSTEM -->
